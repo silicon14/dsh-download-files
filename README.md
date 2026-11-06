@@ -20,12 +20,14 @@ files. Nothing is assembled in the page and no native application is involved.
 ## Install
 
 ```sh
-dsh plugin --profile web add link:/home/zzq/dsh-plugins/dsh-download-files
+git clone https://github.com/silicon14/dsh-download-files.git "$HOME/dsh-plugins/dsh-download-files"
+dsh plugin --profile web add "link:$HOME/dsh-plugins/dsh-download-files"
 ```
 
-Or run Plugin Manager's `install_bundle` against this directory. A reload of the
-open page picks up the browser half; the Host route is live as soon as the row
-activates. The plugin needs the Web composition's `ui-deliverables`,
+`link:` needs the expanded absolute path. Or run Plugin Manager's
+`install_bundle` against the cloned directory. A reload of the open page picks
+up the browser half; the Host route is live as soon as the row activates. The
+plugin needs the Web composition's `ui-deliverables`,
 `ui-sidebar-documentpreview`, `api-workspace-files`, and `workspace-changes`
 rows, which the `dsh-web-app` bundle already supplies.
 
